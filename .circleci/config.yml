@@ -35,11 +35,8 @@ workflows:
     jobs: 
       - build
       - test
-      - test2:
+      - deploy:  
           type: approval
-          requires: 
+          requires:
             - build
             - test
-      - deploy:  
-          requires:
-            - test2
